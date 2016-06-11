@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lilith_Project", "Lilith_Project\Lilith_Project.vcxproj", "{B8837DF3-4430-4E61-B931-7AD1FD728C6E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lilith_Graphic", "Lilith_Graphic\Lilith_Graphic.vcxproj", "{BACA35EC-0E1A-46B2-AF97-FC6439BA67DD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lilith_Engine", "Lilith_Engine\Lilith_Engine.vcxproj", "{0E88C2B6-044D-4AC1-A686-84A9D48E9C4E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lilith_Common", "Lilith_Common\Lilith_Common.vcxproj", "{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{0E88C2B6-044D-4AC1-A686-84A9D48E9C4E}.Release|x64.Build.0 = Release|x64
 		{0E88C2B6-044D-4AC1-A686-84A9D48E9C4E}.Release|x86.ActiveCfg = Release|Win32
 		{0E88C2B6-044D-4AC1-A686-84A9D48E9C4E}.Release|x86.Build.0 = Release|Win32
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Debug|x64.ActiveCfg = Debug|x64
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Debug|x64.Build.0 = Debug|x64
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Debug|x86.ActiveCfg = Debug|Win32
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Debug|x86.Build.0 = Debug|Win32
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Release|x64.ActiveCfg = Release|x64
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Release|x64.Build.0 = Release|x64
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Release|x86.ActiveCfg = Release|Win32
+		{29CF845F-1BCB-4E88-A3F5-CA3003E1D1D4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,6 +17,9 @@ namespace Lilith
 
 		virtual void ShutDown();
 
+	public:
+		static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
 	private:
 		void CreateMainWindow(HINSTANCE hInstance, int nCmdShow);
 	};

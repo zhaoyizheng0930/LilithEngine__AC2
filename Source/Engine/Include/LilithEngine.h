@@ -1,10 +1,11 @@
 #pragma once
 #include "LilithEngineSetting.h"
+#include "Singleton.h"
 
 
 namespace Lilith
 {
-	class LilithEngine
+	class LilithEngine: public Singleton<LilithEngine>
 	{
 	public:
 		LilithEngine();

@@ -14,6 +14,6 @@ namespace Lilith
 
 	void LilithEngine::Initialize()
 	{
-
+		LilithEngineSetting::GetSingletonPtr()->LoadEngineConfig();
 	}
 }
