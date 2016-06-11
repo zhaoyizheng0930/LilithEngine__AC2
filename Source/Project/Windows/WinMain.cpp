@@ -13,7 +13,10 @@ namespace Lilith
 
 	HRESULT WinMain::Initialize(HINSTANCE hInstance, int nCmdShow)
 	{
+		//LoadEngineConfig
 
+		//Create Window
+		CreateMainWindow(hInstance , nCmdShow);
 	}
 
 	bool WinMain::Update()
@@ -22,6 +25,11 @@ namespace Lilith
 	}
 
 	void WinMain::ShutDown()
+	{
+
+	}
+
+	void WinMain::CreateMainWindow(HINSTANCE hInstance, int nCmdShow)
 	{
 
 	}

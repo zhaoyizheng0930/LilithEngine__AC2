@@ -18,6 +18,6 @@ namespace Lilith
 		virtual void ShutDown();
 
 	private:
-
+		void CreateMainWindow(HINSTANCE hInstance, int nCmdShow);
 	};
 }
