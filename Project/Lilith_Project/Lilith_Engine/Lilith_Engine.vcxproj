@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Source\Engine\Include\LilithEngine.h" />
     <ClInclude Include="..\..\..\Source\Engine\Include\LilithEngineSetting.h" />
+    <ClInclude Include="..\..\..\Source\Engine\Include\PrecompiledHeaderEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Engine\Source\LilithEngine.cpp" />

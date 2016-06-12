@@ -22,5 +22,8 @@ namespace Lilith
 
 	private:
 		void CreateMainWindow(HINSTANCE hInstance, int nCmdShow);
+
+		HINSTANCE               m_hInst = NULL;
+		HWND                    m_hWnd = NULL;
 	};
 }

@@ -26,5 +26,8 @@
     <ClInclude Include="..\..\..\Source\Project\Windows\WinMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Source\Project\Windows\PrecompiledHeaderProject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -67,21 +67,21 @@ namespace Lilith
 		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 		wcex.lpszMenuName = NULL;
 		wcex.lpszClassName = L"TutorialWindowClass";
-		wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR)IDI_TUTORIAL1);
+		wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR)LilithEngineSetting::GetSingletonPtr()->GetEngineIconName());
 		if (!RegisterClassEx(&wcex))
 			return E_FAIL;
 
 		// Create window
-		g_hInst = hInstance;
+		m_hInst = hInstance;
 		RECT rc = { 0, 0, 640, 480 };
 		AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
-		g_hWnd = CreateWindow(L"TutorialWindowClass", L"Direct3D 11 Tutorial 1: Direct3D 11 Basics", WS_OVERLAPPEDWINDOW,
+		m_hWnd = CreateWindow(L"TutorialWindowClass", L"Direct3D 11 Tutorial 1: Direct3D 11 Basics", WS_OVERLAPPEDWINDOW,
 			CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
 			NULL);
-		if (!g_hWnd)
+		if (!m_hWnd)
 			return E_FAIL;
 
-		ShowWindow(g_hWnd, nCmdShow);
+		ShowWindow(m_hWnd, nCmdShow);
 
 		return S_OK;
 	}
