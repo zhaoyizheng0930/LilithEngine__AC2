@@ -1,3 +1,4 @@
+#include "PrecompiledHeaderProject.h"
 //Everything has begun
 //this project just design as a launcher and maybe for MutiPlatform
 //Just dont design more for mutiPlatform.its not the main point

@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\..\Source\Project\Windows\WinMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Source\Project\Windows\PrecompiledHeaderProject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Source\Project\Windows\WinMain.h">

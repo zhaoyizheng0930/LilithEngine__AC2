@@ -32,5 +32,8 @@
     <ClCompile Include="..\..\..\Source\Engine\Source\LilithEngineSetting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Source\Engine\Source\PrecompiledHeaderEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
