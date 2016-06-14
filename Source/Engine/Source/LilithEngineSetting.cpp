@@ -5,7 +5,8 @@ namespace Lilith
 {
 	LilithEngineSetting::LilithEngineSetting()
 	{
-
+		WindowsWidth = 640;
+		WindowsHeight = 480;
 	}
 
 	LilithEngineSetting::~LilithEngineSetting()

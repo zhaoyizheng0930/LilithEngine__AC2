@@ -19,16 +19,18 @@ namespace Lilith
 		LilithEngine::GetSingletonPtr()->Initialize();
 		//Create Window
 		CreateMainWindow(hInstance , nCmdShow);
+		//Create D3DDevice
+		LilithEngine::GetSingletonPtr()->CreateDevice();
 	}
 
 	bool WinMain::Update()
 	{
-
+		LilithEngine::GetSingletonPtr()->Update();
 	}
 
 	void WinMain::ShutDown()
 	{
-
+		LilithEngine::GetSingletonPtr()->ShutDown();
 	}
 
 	LRESULT CALLBACK WinMain::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -63,27 +65,29 @@ namespace Lilith
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hInstance = hInstance;
-		wcex.hIcon = LoadIcon(hInstance, (LPCTSTR)LilithEngineSetting::GetSingletonPtr()->GetEngineIconName());
+		wcex.hIcon = LoadIcon(hInstance, (LPCTSTR)LilithEngineSetting::GetSingletonPtr()->GetEngineIconName().c_str());
 		wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 		wcex.lpszMenuName = NULL;
 		wcex.lpszClassName = L"TutorialWindowClass";
-		wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR)LilithEngineSetting::GetSingletonPtr()->GetEngineIconName());
+		wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR)LilithEngineSetting::GetSingletonPtr()->GetEngineIconName().c_str());
 		if (!RegisterClassEx(&wcex))
-			return E_FAIL;
+			return;
 
 		// Create window
 		m_hInst = hInstance;
-		RECT rc = { 0, 0, 640, 480 };
+		float width, height;
+		LilithEngineSetting::GetSingletonPtr()->GetEngineWindowsSize(width, height);
+		RECT rc = { 0, 0, width, height };
 		AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
 		m_hWnd = CreateWindow(L"TutorialWindowClass", L"Direct3D 11 Tutorial 1: Direct3D 11 Basics", WS_OVERLAPPEDWINDOW,
 			CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
 			NULL);
 		if (!m_hWnd)
-			return E_FAIL;
+			return;
 
 		ShowWindow(m_hWnd, nCmdShow);
 
-		return S_OK;
+		return;
 	}
 }

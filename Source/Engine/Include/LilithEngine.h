@@ -12,6 +12,12 @@ namespace Lilith
 		virtual ~LilithEngine();
 
 		virtual void Initialize();
+
+		virtual void CreateDevice();
+
+		virtual void Update();
+
+		virtual void ShutDown();
 	protected:
 	private:
 	};

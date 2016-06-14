@@ -15,8 +15,13 @@ namespace Lilith
 		std::string GetEngineIconName() {
 			return iconName;
 		}
+		void GetEngineWindowsSize(float& width, float& height) {
+			width = WindowsWidth; height = WindowsHeight;
+		}
 	protected:
 	private:
+		float WindowsWidth;
+		float WindowsHeight;
 		std::string iconName;
 	};
 }
