@@ -13,11 +13,14 @@ namespace Lilith
 
 		virtual void Initialize();
 
-		virtual void CreateDevice();
+		//Todo:ALL Monitor Use the windowhandle.
+		virtual void CreateMonitor(HWND windowHandle);
 
 		virtual void Update();
 
 		virtual void ShutDown();
+
+		virtual LilithEngineSetting* GetSetting();
 	protected:
 	private:
 	};

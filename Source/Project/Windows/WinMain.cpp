@@ -20,7 +20,7 @@ namespace Lilith
 		//Create Window
 		CreateMainWindow(hInstance , nCmdShow);
 		//Create D3DDevice
-		LilithEngine::GetSingletonPtr()->CreateDevice();
+		LilithEngine::GetSingletonPtr()->CreateMonitor(m_hWnd);
 	}
 
 	bool WinMain::Update()

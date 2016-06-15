@@ -7,6 +7,7 @@ namespace Lilith
 	{
 		WindowsWidth = 640;
 		WindowsHeight = 480;
+		MonitorNum = 1;
 	}
 
 	LilithEngineSetting::~LilithEngineSetting()

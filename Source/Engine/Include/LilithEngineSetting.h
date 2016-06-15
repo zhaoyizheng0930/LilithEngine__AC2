@@ -18,8 +18,14 @@ namespace Lilith
 		void GetEngineWindowsSize(float& width, float& height) {
 			width = WindowsWidth; height = WindowsHeight;
 		}
+
+		int GetMonitorNum()
+		{
+			return MonitorNum;
+		}
 	protected:
 	private:
+		int MonitorNum;
 		float WindowsWidth;
 		float WindowsHeight;
 		std::string iconName;

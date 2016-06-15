@@ -1,5 +1,6 @@
 #include "PrecompiledHeaderEngine.h"
 #include "../Include/LilithEngine.h"
+#include "Common/Monitor/MonitorManager.h"
 
 namespace Lilith
 {
@@ -18,14 +19,14 @@ namespace Lilith
 		LilithEngineSetting::GetSingletonPtr()->LoadEngineConfig();
 	}
 
-	void LilithEngine::CreateDevice()
+	void LilithEngine::CreateMonitor(HWND windowHandle)
 	{
-		float width, height;
-		LilithEngineSetting::GetSingletonPtr()->GetEngineWindowsSize(width, height);
-		UINT createDeviceFlags = 0;
-#ifdef _DEBUG
-		createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
-#endif
+		//CreateMonitor
+		int MonitorNum = GetSetting()->GetMonitorNum();
+		for (int i = 0; i < MonitorNum;i++)
+		{
+			MonitorManager::GetSingletonPtr()->InitializeMonitor(i, windowHandle);
+		}
 	}
 
 	void LilithEngine::Update()
@@ -36,5 +37,10 @@ namespace Lilith
 	void LilithEngine::ShutDown()
 	{
 
+	}
+
+	LilithEngineSetting* LilithEngine::GetSetting()
+	{
+		return LilithEngineSetting::GetSingletonPtr();
 	}
 }
