@@ -16,12 +16,13 @@ namespace Lilith
 
 	void DX11GraphicDevice::Initialize(HWND windowHandle)
 	{
+		//Init Device Option
+		m_DeviceOption.init();
 		//Create Device
 		CreateD3DDevice(windowHandle);
 		//InitGraphicDebug
 		InitGraphicDebugTools();
 		//
-
 	}
 
 	void DX11GraphicDevice::SetViewport(int x, int y, int width, int height)
@@ -71,21 +72,19 @@ namespace Lilith
 		m_pD3DDevice->GetImmediateContext(&m_pD3DDeviceContext);
 
 		//not do msaa here!!
-		SetViewport();
+		SetViewport(0,0, m_DevicePresentParams.BufferDesc.Width , m_DevicePresentParams.BufferDesc.Height);
 
-		CreateResources();
+		m_VertexFormatManager.init(this);
 
-		CreateStates(); // Initialise containers for render state storage (map) and default states
+		//m_DX11DirectDisplay.Init(this);
 
-		DX11StateManager::StaticInitialize(); // Init table
+		m_ShaderManager.Initialize(this);
 
-		m_StateManager = popNew(GfxStateManager, "GfxStateManager", this)(m_device);
-		m_StateManager->SetDX11Device(this); //@@CK: need this to call back the storage/creation functions of renderstates
+#ifdef POP_PLATFORM_WIN32
+		NotifyGraphicDeviceReset();
+#endif
 
-		for (int type = GFX_SHADER_TYPE_FIST; type < GFX_SHADER_TYPE_COUNT; ++type)
-		{
-			m_ConstantsBuffers[type] = popNew(GfxConstantsBuffer, "GfxConstantsBuffer", this)(m_device, s_NumRegistersPerConstantBuffer[type]);
-		}
+		m_3DDevice->ResetStates();
 	}
 
 	void DX11GraphicDevice::InitGraphicDebugTools()

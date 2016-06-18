@@ -1,5 +1,7 @@
 #pragma once
 #include "dx11StateManager.h"
+#include "dx11deviceOption.h"
+#include "dx11vertexformat.h"
 
 namespace Lilith
 {
@@ -28,5 +30,12 @@ namespace Lilith
 		D3D11_VIEWPORT m_Viewport;
 
 		DXGI_SWAP_CHAIN_DESC	m_DevicePresentParams;
+
+		DX11DeviceOption m_DeviceOption;
+
+		DX11VertexFormatManager m_VertexFormatManager;
+
+		//dont know what is it.
+		//DX11DirectDisplay m_DX11DirectDisplay;
 	};
 }
