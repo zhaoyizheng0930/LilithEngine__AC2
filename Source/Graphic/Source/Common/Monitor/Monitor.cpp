@@ -17,5 +17,7 @@ namespace Lilith
 		m_d3dDevice = new DX11GraphicDevice();
 		//Init D3DDeviceWrap
 		m_d3dDevice->Initialize(windowHandle);
+		//Create ViewSurface
+
 	}
 }

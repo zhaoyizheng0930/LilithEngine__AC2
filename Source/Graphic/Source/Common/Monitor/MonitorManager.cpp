@@ -25,7 +25,7 @@ namespace Lilith
 		}
 		else
 		{
-			//LOG:You had already init the monitor
+			//LOG:You had already inited the monitor
 		}
 
 	}

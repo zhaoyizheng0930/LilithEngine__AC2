@@ -80,11 +80,7 @@ namespace Lilith
 
 		m_ShaderManager.Initialize(this);
 
-#ifdef POP_PLATFORM_WIN32
-		NotifyGraphicDeviceReset();
-#endif
-
-		m_3DDevice->ResetStates();
+		//Maybe need to reset device state
 	}
 
 	void DX11GraphicDevice::InitGraphicDebugTools()

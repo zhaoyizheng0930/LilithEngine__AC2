@@ -5,6 +5,7 @@
 
 namespace Lilith
 {
+	//ZYZ_TODO:Is this Device Wrap need to break down to graphicdevice and device?
 	class DX11GraphicDevice
 	{
 	public:
@@ -15,7 +16,7 @@ namespace Lilith
 
 		virtual void SetViewport(int x, int y, int width, int height);
 
-		void SetCurrentResolution(ubiU32 index, ubiBool vSync);
+		//void SetCurrentResolution(ubiU32 index, ubiBool vSync);
 	private:
 		void CreateD3DDevice(HWND windowHandle);
 		//Probably Use RenderDoc.I like it.
@@ -37,5 +38,6 @@ namespace Lilith
 
 		//dont know what is it.
 		//DX11DirectDisplay m_DX11DirectDisplay;
+		DX11ShaderManager m_ShaderManager;
 	};
 }

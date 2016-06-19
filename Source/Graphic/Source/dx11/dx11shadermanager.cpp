@@ -12,4 +12,9 @@ namespace Lilith
 	{
 
 	}
+
+	void DX11ShaderManager::Initialize(DX11GraphicDevice* device)
+	{
+
+	}
 }

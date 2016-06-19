@@ -9,7 +9,7 @@ namespace Lilith
 		BaseShaderManager();
 		~BaseShaderManager();
 
-
+		virtual void Initialize(DX11GraphicDevice* device){}
 	protected:
 	private:
 	};
