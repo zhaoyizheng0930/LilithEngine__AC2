@@ -13,15 +13,117 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\dx11">
+      <UniqueIdentifier>{d5cbb139-a4ca-416a-b43e-fd2351eb4a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dx11">
+      <UniqueIdentifier>{b32cca49-0aa7-43fc-8e16-1523b0f6a7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{6508d20e-558a-4ee9-8169-48c98d3b2171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\Monitor">
+      <UniqueIdentifier>{2253349c-ad11-487c-8626-70bb58cbe8ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tools">
+      <UniqueIdentifier>{542921c7-87b9-4ecc-8bd1-bd50dea7505e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools">
+      <UniqueIdentifier>{552c54bf-11be-42ac-a571-a98581c84d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shader">
+      <UniqueIdentifier>{25a95e24-3c14-4b45-ab49-21a353b0696c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shader">
+      <UniqueIdentifier>{579f4968-e45c-4b6e-9bda-bf0b7d63b352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{23a2f918-bf0b-4dd9-ad88-4893473a786d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\Monitor">
+      <UniqueIdentifier>{499c2e1c-731c-41a7-9e3a-cb9d7e11cf5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Source\Graphic\Include\PrecompiledHeaderGraphic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11device.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\Monitor.h">
+      <Filter>Header Files\Common\Monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\MonitorManager.h">
+      <Filter>Header Files\Common\Monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11StateManager.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\tools\ShaderCompiler.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11deviceOption.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11vertexformat.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\shader\baseshadermanager.h">
+      <Filter>Header Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11shadermanager.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11swapchain.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11viewsurface.h">
+      <Filter>Header Files\dx11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\GraphicManager.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Graphic\Source\PrecompiledHeaderGraphic.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11device.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\Monitor.cpp">
+      <Filter>Source Files\Common\Monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\MonitorManager.cpp">
+      <Filter>Source Files\Common\Monitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11StateManager.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\tools\ShaderCompiler.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11deviceOption.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11vertexformat.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\shader\baseshadermanager.cpp">
+      <Filter>Source Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11shadermanager.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11swapchain.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11viewsurface.cpp">
+      <Filter>Source Files\dx11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\GraphicManager.cpp">
+      <Filter>Source Files\Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

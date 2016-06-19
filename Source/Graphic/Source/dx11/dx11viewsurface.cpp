@@ -13,4 +13,12 @@ namespace Lilith
 	{
 
 	}
+
+	void DX11ViewSurface::Initialize(DX11GraphicDevice* GraphicDevice, int width, int height)
+	{
+		m_GraphicDevice = GraphicDevice;
+
+		m_SwapChain = new DX11Swapchain(m_GraphicDevice , m_WindowHandle , width , height);
+
+	}
 }

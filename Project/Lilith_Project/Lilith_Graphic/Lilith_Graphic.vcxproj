@@ -160,13 +160,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\GraphicManager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\Monitor.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\MonitorManager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11device.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11deviceOption.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11shadermanager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11StateManager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11swapchain.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11vertexformat.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11viewsurface.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\PrecompiledHeaderGraphic.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\shader\baseshadermanager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\tools\ShaderCompiler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\GraphicManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\Monitor.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\MonitorManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11shadermanager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11device.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11deviceOption.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11StateManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11swapchain.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11vertexformat.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11viewsurface.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\PrecompiledHeaderGraphic.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\shader\baseshadermanager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\tools\ShaderCompiler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

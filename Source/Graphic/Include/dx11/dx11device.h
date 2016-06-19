@@ -2,6 +2,7 @@
 #include "dx11StateManager.h"
 #include "dx11deviceOption.h"
 #include "dx11vertexformat.h"
+#include "dx11shadermanager.h"
 
 namespace Lilith
 {
@@ -16,7 +17,9 @@ namespace Lilith
 
 		virtual void SetViewport(int x, int y, int width, int height);
 
-		//void SetCurrentResolution(ubiU32 index, ubiBool vSync);
+		void SetCurrentResolution(int width, int height, int refreshRate, bool vSync);
+
+		IDXGISwapChain* CreateSwapChain(DXGI_SWAP_CHAIN_DESC* swap_chain_desc_);
 	private:
 		void CreateD3DDevice(HWND windowHandle);
 		//Probably Use RenderDoc.I like it.

@@ -1,5 +1,6 @@
 #include "PrecompiledHeaderGraphic.h"
 #include "dx11/dx11device.h"
+#include "../../Include/Common/GraphicManager.h"
 
 namespace Lilith
 {
@@ -22,7 +23,8 @@ namespace Lilith
 		CreateD3DDevice(windowHandle);
 		//InitGraphicDebug
 		InitGraphicDebugTools();
-		//
+		//ZYZ_TODO:Create ViewSurface.Temp:How many surface we needed?i don't know!Use the viewport Size first.Very hate Code!!
+		GraphicManager::GetSingletonPtr()->CreateViewSurface(windowHandle, m_DevicePresentParams.BufferDesc.Width, m_DevicePresentParams.BufferDesc.Height);
 	}
 
 	void DX11GraphicDevice::SetViewport(int x, int y, int width, int height)
@@ -36,6 +38,31 @@ namespace Lilith
 		m_Viewport.MaxDepth = 0.9999f;
 		//give the viewport param to statemanager
 		DX11StateManger::GetSingletonPtr()->SetViewport(m_Viewport);
+	}
+
+	void DX11GraphicDevice::SetCurrentResolution(int width, int height, int refreshRate, bool vSync)
+	{
+		//need Validate.
+		//if you want to config fullscreen mode. add here!
+		m_DevicePresentParams.BufferDesc.Width = width;
+		m_DevicePresentParams.BufferDesc.Height = height;
+	}
+
+	IDXGISwapChain* DX11GraphicDevice::CreateSwapChain(DXGI_SWAP_CHAIN_DESC* swap_chain_desc_)
+	{
+		// get dxgi factory
+		IDXGIDevice1* pDXGIDevice = NULL;
+		m_pD3DDevice->QueryInterface(__uuidof(IDXGIDevice1), (void **)&pDXGIDevice);
+
+		IDXGIAdapter* pDXGIAdapter = NULL;
+		pDXGIDevice->GetParent(__uuidof(IDXGIAdapter), (void **)&pDXGIAdapter);
+
+		IDXGIFactory* pIDXGIFactory = NULL;
+		pDXGIAdapter->GetParent(__uuidof(IDXGIFactory), (void **)&pIDXGIFactory);
+
+		// create swap chain
+		IDXGISwapChain* swapchain = NULL;
+		pIDXGIFactory->CreateSwapChain(pDXGIDevice, swap_chain_desc_, &swapchain);
 	}
 
 	void DX11GraphicDevice::CreateD3DDevice(HWND windowHandle)
@@ -85,6 +112,6 @@ namespace Lilith
 
 	void DX11GraphicDevice::InitGraphicDebugTools()
 	{
-
+		//ZYZ_TODO:We need to intergrate RenderDoc here!
 	}
 }

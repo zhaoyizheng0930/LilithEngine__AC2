@@ -12,7 +12,7 @@ namespace Lilith
 		MonitorManager();
 		~MonitorManager();
 	public:
-		void InitializeMonitor(int index, HWND windowHandle);
+		void InitializeMonitor(int index, HWND windowHandle , int width , int height);
 
 		Monitor* GetMonitor(int index = 0);
 	private:

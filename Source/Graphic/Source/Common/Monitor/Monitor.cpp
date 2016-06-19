@@ -11,13 +11,13 @@ namespace Lilith
 	{
 	}
 
-	void Monitor::Initialize(HWND windowHandle)
+	void Monitor::Initialize(HWND windowHandle, int width, int height)
 	{
 		//Create D3DDeviceWrap
 		m_d3dDevice = new DX11GraphicDevice();
-		//Init D3DDeviceWrap
+		//resolution need to adapt the DeviceOption
+		m_d3dDevice->SetCurrentResolution(width , height);
+		//init D3DDevice
 		m_d3dDevice->Initialize(windowHandle);
-		//Create ViewSurface
-
 	}
 }

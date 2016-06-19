@@ -21,9 +21,15 @@
     <ClInclude Include="..\..\..\Source\Common\Include\PrecompiledHeaderCommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Source\Common\Include\Rect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Common\Source\PrecompiledHeaderCommon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Common\Source\Rect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -15,13 +15,13 @@ namespace Lilith
 	{
 	}
 
-	void MonitorManager::InitializeMonitor(int index, HWND windowHandle)
+	void MonitorManager::InitializeMonitor(int index, HWND windowHandle, int width, int height)
 	{
 		Monitor* monitor = GetMonitor(index);
 		if (monitor == nullptr)
 		{
 			monitor = new Monitor();
-			monitor->Initialize(windowHandle);
+			monitor->Initialize(windowHandle , width , height);
 		}
 		else
 		{
