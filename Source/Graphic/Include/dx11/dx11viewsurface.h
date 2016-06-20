@@ -13,6 +13,8 @@ namespace Lilith
 		~DX11ViewSurface();
 
 		void Initialize(DX11GraphicDevice* GraphicDevice, int width, int height);
+
+		void Render();
 	protected:
 	private:
 		HWND m_WindowHandle;

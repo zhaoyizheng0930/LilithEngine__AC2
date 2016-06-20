@@ -20,6 +20,8 @@ namespace Lilith
 		void SetCurrentResolution(int width, int height, int refreshRate, bool vSync);
 
 		IDXGISwapChain* CreateSwapChain(DXGI_SWAP_CHAIN_DESC* swap_chain_desc_);
+
+		ID3D11RenderTargetView* CreateRenderTarget(int width_, int height_, DXGI_FORMAT format_, int multisample_, int multisample_quality_);
 	private:
 		void CreateD3DDevice(HWND windowHandle);
 		//Probably Use RenderDoc.I like it.
@@ -42,5 +44,7 @@ namespace Lilith
 		//dont know what is it.
 		//DX11DirectDisplay m_DX11DirectDisplay;
 		DX11ShaderManager m_ShaderManager;
+
+		DX11ViewSurface* m_CurrentViewSurface;
 	};
 }

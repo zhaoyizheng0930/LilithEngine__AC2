@@ -1,5 +1,6 @@
 #include "PrecompiledHeaderGraphic.h"
 #include "dx11/dx11viewsurface.h"
+#include "dx11/dx11drawmanager.h"
 
 namespace Lilith
 {
@@ -20,5 +21,10 @@ namespace Lilith
 
 		m_SwapChain = new DX11Swapchain(m_GraphicDevice , m_WindowHandle , width , height);
 
+	}
+
+	void DX11ViewSurface::Render()
+	{
+		DX11DrawManager::GetSingletonPtr()->Render(this);
 	}
 }

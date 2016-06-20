@@ -9,6 +9,7 @@ namespace Lilith
 		m_WindowHandle = 0;
 		m_pD3DDevice = NULL;
 		m_pD3DDeviceContext = NULL;
+		m_CurrentViewSurface = NULL;
 	}
 
 	DX11GraphicDevice::~DX11GraphicDevice()
@@ -23,8 +24,12 @@ namespace Lilith
 		CreateD3DDevice(windowHandle);
 		//InitGraphicDebug
 		InitGraphicDebugTools();
+		//CreateView
+		//Near Far FOV AspectRatio Viewport bMainView
+		//ComputeLookAtMatrix
+		//defaultView->SetViewMatrix(viewMatrix);
 		//ZYZ_TODO:Create ViewSurface.Temp:How many surface we needed?i don't know!Use the viewport Size first.Very hate Code!!
-		GraphicManager::GetSingletonPtr()->CreateViewSurface(windowHandle, m_DevicePresentParams.BufferDesc.Width, m_DevicePresentParams.BufferDesc.Height);
+		m_CurrentViewSurface = GraphicManager::GetSingletonPtr()->CreateViewSurface(windowHandle, m_DevicePresentParams.BufferDesc.Width, m_DevicePresentParams.BufferDesc.Height);
 	}
 
 	void DX11GraphicDevice::SetViewport(int x, int y, int width, int height)
@@ -64,6 +69,35 @@ namespace Lilith
 		IDXGISwapChain* swapchain = NULL;
 		pIDXGIFactory->CreateSwapChain(pDXGIDevice, swap_chain_desc_, &swapchain);
 	}
+
+	ID3D11RenderTargetView* DX11GraphicDevice::CreateRenderTarget(int width_, int height_, DXGI_FORMAT format_, int multisample_, int multisample_quality_)
+	{
+		// Create a texture first.
+		D3D11_TEXTURE2D_DESC desc;
+		desc.Width = width_;
+		desc.Height = height_;
+		desc.MipLevels = 1;
+		desc.Format = format_;
+		desc.SampleDesc.Count = multisample_;
+		desc.SampleDesc.Quality = multisample_quality_;
+		desc.Usage = D3D11_USAGE_DEFAULT;
+		desc.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET;
+		desc.CPUAccessFlags = 0;
+		desc.MiscFlags = 0;
+
+		ID3D11Texture2D* pD3DTexture = NULL;
+		m_pD3DDevice->CreateTexture2D(&desc, NULL, &pD3DTexture);
+
+		// create render target
+		ID3D11RenderTargetView* rendertargetview = NULL;
+		D3D11_RENDER_TARGET_VIEW_DESC targetdesc;
+		targetdesc.Format = format_;
+		targetdesc.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2DMS;
+		m_pD3DDevice->CreateRenderTargetView(pD3DTexture, &targetdesc, &rendertargetview);
+
+		return rendertargetview;
+	}
+
 
 	void DX11GraphicDevice::CreateD3DDevice(HWND windowHandle)
 	{
