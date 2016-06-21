@@ -1,5 +1,6 @@
 #pragma once
 #include "dx11/dx11baserenderer.h"
+#include "dx11/dx11device.h"
 
 namespace Lilith
 {
@@ -8,6 +9,8 @@ namespace Lilith
 	public:
 		DX11Renderer();
 		~DX11Renderer();
+
+		void SetHelpers(DX11GraphicDevice* pGraphicDevice);
 
 		void Render(/*RenderBatch& renderBatch, GfxBaseRendererRenderSets& baseRenderSets, GfxRenderSet& swapChainRenderSet*/);
 	protected:
@@ -18,5 +21,7 @@ namespace Lilith
 
 		void SetupMainRenderSurface();
 	private:
+		//helpers
+		DX11GraphicDevice* m_GraphicDevice;
 	};
 }

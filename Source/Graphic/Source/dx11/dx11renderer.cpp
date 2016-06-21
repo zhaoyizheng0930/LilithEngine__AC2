@@ -4,7 +4,8 @@
 namespace Lilith
 {
 	DX11Renderer::DX11Renderer():
-		DX11BaseRenderer()
+		DX11BaseRenderer(),
+		m_GraphicDevice(NULL)
 	{
 
 	}
@@ -12,6 +13,11 @@ namespace Lilith
 	DX11Renderer::~DX11Renderer()
 	{
 
+	}
+
+	void DX11Renderer::SetHelpers(DX11GraphicDevice* pGraphicDevice)
+	{
+		m_GraphicDevice = pGraphicDevice;
 	}
 
 	void DX11Renderer::Render(/*RenderBatch& renderBatch, GfxBaseRendererRenderSets& baseRenderSets, GfxRenderSet& swapChainRenderSet*/)
@@ -73,7 +79,7 @@ namespace Lilith
 
 	void DX11Renderer::SetupMainRenderSurface()
 	{
-
+		//m_GraphicDevice->
 	}
 
 	void DX11Renderer::PrepareData()

@@ -23,5 +23,6 @@ namespace Lilith
 		HWND							m_SwapChainWndHandle;
 		IDXGISwapChain*                 m_SwapChain;
 		DXGI_SWAP_CHAIN_DESC			m_SwapChainDesc;
+		DX11GraphicDevice*              m_GraphicDevice;
 	};
 }

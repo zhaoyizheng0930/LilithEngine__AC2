@@ -7,12 +7,7 @@ namespace Lilith
 	{
 		m_SwapChainRec = new Rect(0,0, width , height);
 		m_SwapChainWndHandle = windowHandle;
-
-		Init();
-
-		m_SwapChain = device->CreateSwapChain(&m_SwapChainDesc);
-
-		UpdateSwapChainBuffers();
+		m_GraphicDevice = device;
 	}
 	DX11Swapchain::~DX11Swapchain()
 	{
@@ -32,6 +27,10 @@ namespace Lilith
 		m_SwapChainDesc.SampleDesc.Count = 1;
 		m_SwapChainDesc.SampleDesc.Quality = 0;
 		m_SwapChainDesc.Windowed = TRUE;
+
+		m_SwapChain = m_GraphicDevice->CreateSwapChain(&m_SwapChainDesc);
+
+		UpdateSwapChainBuffers();
 	}
 
 	void DX11Swapchain::UpdateSwapChainBuffers()

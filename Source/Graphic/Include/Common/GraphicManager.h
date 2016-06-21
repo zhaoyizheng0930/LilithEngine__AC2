@@ -11,8 +11,13 @@ namespace Lilith
 		GraphicManager();
 		~GraphicManager();
 
+		void Update();
+
 		virtual DX11ViewSurface* CreateViewSurface(HWND windowHandle, int width, int height);
 	protected:
+
+	private:
+		void DisplayAllSurfaces();
 	private:
 		std::vector<DX11ViewSurface*> m_Surfaces;
 	};

@@ -1,6 +1,7 @@
 #include "PrecompiledHeaderEngine.h"
 #include "../Include/LilithEngine.h"
 #include "Common/Monitor/MonitorManager.h"
+#include "../../Graphic/Include/Common/GraphicManager.h"
 
 namespace Lilith
 {
@@ -31,7 +32,7 @@ namespace Lilith
 
 	void LilithEngine::Update()
 	{
-
+		GraphicManager::GetSingletonPtr()->Update();
 	}
 
 	void LilithEngine::ShutDown()

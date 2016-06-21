@@ -21,10 +21,24 @@ namespace Lilith
 
 		m_SwapChain = new DX11Swapchain(m_GraphicDevice , m_WindowHandle , width , height);
 
+		m_SwapChain->Init();
+
 	}
 
-	void DX11ViewSurface::Render()
+	void DX11ViewSurface::Display()
 	{
+		PreRender();
 		DX11DrawManager::GetSingletonPtr()->Render(this);
+		PostRender();
+	}
+
+	void DX11ViewSurface::PreRender()
+	{
+
+	}
+
+	void DX11ViewSurface::PostRender()
+	{
+
 	}
 }
