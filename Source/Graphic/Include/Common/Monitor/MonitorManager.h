@@ -12,10 +12,10 @@ namespace Lilith
 		MonitorManager();
 		~MonitorManager();
 	public:
-		void InitializeMonitor(int index, HWND windowHandle , int width , int height);
+		void CreateMonitor();
 
 		Monitor* GetMonitor(int index = 0);
 	private:
-		Monitor* m_monitors[MAX_MONITOR_NUM];
+		std::vector<Monitor*> m_Monitors;
 	};
 }

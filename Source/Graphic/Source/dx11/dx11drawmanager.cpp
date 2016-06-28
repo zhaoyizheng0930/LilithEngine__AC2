@@ -35,9 +35,7 @@ namespace Lilith
 	void DX11DrawManager::PreRender(DX11ViewSurface* viewsurface)
 	{
 		//StartUp Device And Context
-		DX11GraphicContext* context = m_CurrentRender->GetGraphicContext();
-		context->SetGraphicDevice(viewsurface->GetGraphicDevice());
-		context->SetViewSurface(viewsurface);
+		m_CurrentRender->SetHelpers(viewsurface);
 	}
 
 	void DX11DrawManager::PostRender(DX11ViewSurface* viewsurface)

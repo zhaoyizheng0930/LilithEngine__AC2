@@ -30,7 +30,6 @@ namespace Lilith
 		//defaultView->SetViewMatrix(viewMatrix);
 		//ZYZ_TODO:Create ViewSurface.Temp:How many surface we needed?i don't know!Use the viewport Size first.Very hate Code!!
 		//will get it out
-		m_CurrentViewSurface = GraphicManager::GetSingletonPtr()->CreateViewSurface(windowHandle, m_DevicePresentParams.BufferDesc.Width, m_DevicePresentParams.BufferDesc.Height);
 	}
 
 	void DX11GraphicDevice::SetViewport(int x, int y, int width, int height)

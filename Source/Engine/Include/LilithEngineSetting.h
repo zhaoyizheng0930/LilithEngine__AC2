@@ -15,7 +15,7 @@ namespace Lilith
 		std::string GetEngineIconName() {
 			return iconName;
 		}
-		void GetEngineWindowsSize(float& width, float& height) {
+		void GetEngineWindowsSize(int& width, int& height) {
 			width = WindowsWidth; height = WindowsHeight;
 		}
 
@@ -23,11 +23,17 @@ namespace Lilith
 		{
 			return MonitorNum;
 		}
+
+		int GetViewSurfaceNum()
+		{
+			return ViewSurfaceNum;
+		}
 	protected:
 	private:
-		int MonitorNum;
-		float WindowsWidth;
-		float WindowsHeight;
+		int MonitorNum;	//if you need clip screen.set 2.FullScreen set 1.
+		int ViewSurfaceNum;
+		int WindowsWidth;
+		int WindowsHeight;
 		std::string iconName;
 	};
 }

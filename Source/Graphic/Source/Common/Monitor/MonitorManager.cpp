@@ -15,26 +15,17 @@ namespace Lilith
 	{
 	}
 
-	void MonitorManager::InitializeMonitor(int index, HWND windowHandle, int width, int height)
+	void MonitorManager::CreateMonitor()
 	{
-		Monitor* monitor = GetMonitor(index);
-		if (monitor == nullptr)
-		{
-			monitor = new Monitor();
-			monitor->Initialize(windowHandle , width , height);
-		}
-		else
-		{
-			//LOG:You had already inited the monitor
-		}
-
+		Monitor* monitor = new Monitor();
+		m_Monitors.push_back(monitor);
 	}
 
 	Monitor* MonitorManager::GetMonitor(int index)
 	{
-		if (index < MAX_MONITOR_NUM)
+		if (index < m_Monitors.size())
 		{
-			return m_monitors[index];
+			return m_Monitors[index];
 		}
 	}
 }

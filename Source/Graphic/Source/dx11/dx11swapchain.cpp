@@ -39,7 +39,7 @@ namespace Lilith
 		ID3D11Texture2D* tex;
 		m_SwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&tex);
 		//Temp Draw background
-		tex->
+		//tex->
 	}
 
 	void DX11Swapchain::Flip()

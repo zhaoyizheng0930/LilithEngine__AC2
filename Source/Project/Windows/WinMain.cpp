@@ -16,11 +16,15 @@ namespace Lilith
 	HRESULT WinMain::Initialize(HINSTANCE hInstance, int nCmdShow)
 	{
 		//LoadEngineConfig
-		LilithEngine::GetSingletonPtr()->Initialize();
+		LilithEngine::GetSingletonPtr()->LoadConfiguration();
 		//Create Window
 		CreateMainWindow(hInstance , nCmdShow);
 		//Create D3DDevice
-		LilithEngine::GetSingletonPtr()->CreateMonitor(m_hWnd);
+		LilithEngine::GetSingletonPtr()->CreateMonitor();
+		//CreateViewSurface
+		LilithEngine::GetSingletonPtr()->CreateViewSurface();
+		//Initialize
+		LilithEngine::GetSingletonPtr()->Initialize(m_hWnd);
 
 		return S_OK;
 	}

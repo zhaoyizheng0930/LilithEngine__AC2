@@ -1,0 +1,5 @@
+RenderLogic(ContextWrap)	SoftWareLogic(swapChainWrap)	hardwareLogic(DeviceWrap)
+
+DrawManager			GraphicManager			MonitorManager
+DX11Render	-------		ViewSurface		\	Monitor
+DX11Context			SwapChain			D3Ddevice

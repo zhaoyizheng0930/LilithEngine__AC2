@@ -15,18 +15,39 @@ namespace Lilith
 
 	}
 
-	void LilithEngine::Initialize()
+	void LilithEngine::Initialize(HWND hwnd)
+	{
+		//Default use Index 0
+		int Width = 0;
+		int Height = 0;
+		GetSetting()->GetEngineWindowsSize(Width, Height);
+		Monitor* monitor = MonitorManager::GetSingletonPtr()->GetMonitor();
+		monitor->Initialize(hwnd, Width, Height);
+		DX11ViewSurface* viewsurface = GraphicManager::GetSingletonPtr()->GetViewSurface();
+		viewsurface->Initialize(monitor->GetGraphicDevice() , hwnd , Width , Height);
+	}
+
+	void LilithEngine::LoadConfiguration()
 	{
 		LilithEngineSetting::GetSingletonPtr()->LoadEngineConfig();
 	}
 
-	void LilithEngine::CreateMonitor(HWND windowHandle)
+	void LilithEngine::CreateMonitor()
 	{
 		//CreateMonitor
 		int MonitorNum = GetSetting()->GetMonitorNum();
 		for (int i = 0; i < MonitorNum;i++)
 		{
-			MonitorManager::GetSingletonPtr()->InitializeMonitor(i, windowHandle);
+			MonitorManager::GetSingletonPtr()->CreateMonitor();
+		}
+	}
+
+	void LilithEngine::CreateViewSurface()
+	{
+		int ViewSurfaceNum = GetSetting()->GetViewSurfaceNum();
+		for (int i = 0; i < ViewSurfaceNum; i++)
+		{
+			GraphicManager::GetSingletonPtr()->CreateViewSurface();
 		}
 	}
 

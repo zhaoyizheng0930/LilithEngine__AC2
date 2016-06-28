@@ -35,6 +35,14 @@ namespace Lilith
 		m_Surfaces.push_back(pViewSurface);
 	}
 
+	DX11ViewSurface* GraphicManager::GetViewSurface(int index)
+	{
+		if (index < m_Surfaces.size())
+		{
+			return m_Surfaces[index];
+		}
+	}
+
 	void GraphicManager::DisplayAllSurfaces()
 	{
 		for (std::vector<DX11ViewSurface*>::iterator iter = m_Surfaces.begin(); iter != m_Surfaces.end();iter++)

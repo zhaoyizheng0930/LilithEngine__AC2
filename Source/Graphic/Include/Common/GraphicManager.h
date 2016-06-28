@@ -15,6 +15,8 @@ namespace Lilith
 		void Update();
 
 		virtual DX11ViewSurface* CreateViewSurface(HWND windowHandle, int width, int height);
+
+		virtual DX11ViewSurface* GetViewSurface(int index = 0);
 	protected:
 
 	private:

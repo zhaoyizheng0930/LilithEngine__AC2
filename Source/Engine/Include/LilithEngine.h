@@ -11,10 +11,14 @@ namespace Lilith
 		LilithEngine();
 		virtual ~LilithEngine();
 
-		virtual void Initialize();
+		virtual void Initialize(HWND hwnd);
 
-		//Todo:ALL Monitor Use the windowhandle.
-		virtual void CreateMonitor(HWND windowHandle);
+		virtual void LoadConfiguration();
+
+		//Todo:ALL Monitor Use the windowhandle.default 
+		virtual void CreateMonitor();//(hardware wrap)
+
+		virtual void CreateViewSurface();//(Logic wrap)
 
 		virtual void Update();
 

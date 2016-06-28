@@ -165,6 +165,7 @@
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\Monitor.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\MonitorManager.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\View.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11context.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11device.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11deviceOption.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11shadermanager.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\Monitor.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\MonitorManager.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\View.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11context.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11shadermanager.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11device.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11deviceOption.cpp" />

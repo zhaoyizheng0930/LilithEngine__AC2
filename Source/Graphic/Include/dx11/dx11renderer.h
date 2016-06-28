@@ -14,7 +14,7 @@ namespace Lilith
 
 		void Initialize();
 
-		void SetHelpers(DX11GraphicContext* pGraphicContext);
+		void SetHelpers(DX11ViewSurface* viewsurface);
 
 		//Pass depend one by one.In One pass many task can run in different thread.i'll do it next.
 		//1.startupPass 2.visibility (3.CullingPass) 4.shadowPass 5.projectorPass 6.visibilityQueriesFetchPass 7.reflexion 8.mainOpaque 9.main
