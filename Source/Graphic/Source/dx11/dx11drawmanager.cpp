@@ -3,9 +3,11 @@
 
 namespace Lilith
 {
-	DX11DrawManager::DX11DrawManager()
+	DX11DrawManager::DX11DrawManager():
+		m_CurrentRender(NULL)
 	{
 		m_CurrentRender = new DX11Renderer();
+		m_CurrentRender->Initialize();
 	}
 
 	DX11DrawManager::~DX11DrawManager()
@@ -15,6 +17,8 @@ namespace Lilith
 
 	void DX11DrawManager::Render(DX11ViewSurface* viewsurface)
 	{
+		PreRender(viewsurface);
+
 		if (m_CurrentRender)
 		{
 			std::vector<View*>& views = viewsurface->GetViews();
@@ -24,5 +28,20 @@ namespace Lilith
 				m_CurrentRender->Render(renderbatch);
 			}
 		}
+
+		PostRender(viewsurface);
+	}
+
+	void DX11DrawManager::PreRender(DX11ViewSurface* viewsurface)
+	{
+		//StartUp Device And Context
+		DX11GraphicContext* context = m_CurrentRender->GetGraphicContext();
+		context->SetGraphicDevice(viewsurface->GetGraphicDevice());
+		context->SetViewSurface(viewsurface);
+	}
+
+	void DX11DrawManager::PostRender(DX11ViewSurface* viewsurface)
+	{
+
 	}
 }

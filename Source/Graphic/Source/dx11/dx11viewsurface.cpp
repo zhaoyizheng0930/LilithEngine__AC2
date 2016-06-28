@@ -37,6 +37,11 @@ namespace Lilith
 		return m_Views;
 	}
 
+	DX11GraphicDevice* DX11ViewSurface::GetGraphicDevice()
+	{
+		return m_GraphicDevice;
+	}
+
 	void DX11ViewSurface::PreRender()
 	{
 
@@ -44,6 +49,10 @@ namespace Lilith
 
 	void DX11ViewSurface::PostRender()
 	{
-
+		//Flip swapchain
+		if (m_SwapChain != NULL)
+		{
+			m_SwapChain->Flip();
+		}
 	}
 }

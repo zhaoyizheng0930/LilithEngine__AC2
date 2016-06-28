@@ -21,11 +21,14 @@ namespace Lilith
 		CreateMainWindow(hInstance , nCmdShow);
 		//Create D3DDevice
 		LilithEngine::GetSingletonPtr()->CreateMonitor(m_hWnd);
+
+		return S_OK;
 	}
 
 	bool WinMain::Update()
 	{
 		LilithEngine::GetSingletonPtr()->Update();
+		return true;
 	}
 
 	void WinMain::ShutDown()

@@ -14,6 +14,10 @@ namespace Lilith
 		void Render(DX11ViewSurface* viewsurface);
 	protected:
 	private:
+		void PreRender(DX11ViewSurface* viewsurface);
+
+		void PostRender(DX11ViewSurface* viewsurface);
+	private:
 		DX11Renderer* m_CurrentRender;
 		//DX11Renderer* m_LastRenderer;
 		//DX11Renderer* m_DirectRenderer;	//UseBy Directly log\menu\and so on...

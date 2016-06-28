@@ -7,7 +7,7 @@ namespace Lilith
 		DX11BaseRenderer(),
 		m_GraphicDevice(NULL)
 	{
-
+		m_GraphicContext = new DX11GraphicContext();
 	}
 
 	DX11Renderer::~DX11Renderer()
@@ -15,9 +15,21 @@ namespace Lilith
 
 	}
 
-	void DX11Renderer::SetHelpers(DX11GraphicDevice* pGraphicDevice)
+	void DX11Renderer::Initialize()
 	{
-		m_GraphicDevice = pGraphicDevice;
+		m_GraphicContext->SetRender(this);
+	}
+
+	void DX11Renderer::SetHelpers(DX11GraphicContext* pGraphicContext)
+	{
+		m_GraphicContext = pGraphicContext;
+		m_GraphicDevice = pGraphicContext->GetGraphicDevice();
+		m_CurrentView = pGraphicContext->GetView();
+	}
+
+	DX11GraphicContext* DX11Renderer::GetGraphicContext()
+	{
+		return m_GraphicContext;
 	}
 
 	void DX11Renderer::Render(RenderBatch* batch)

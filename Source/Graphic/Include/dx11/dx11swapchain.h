@@ -16,6 +16,9 @@ namespace Lilith
 
 		void UpdateSwapChainBuffers();
 
+		void Flip();
+
+		Rect* GetSwapchainRect();
 	protected:
 
 	private:

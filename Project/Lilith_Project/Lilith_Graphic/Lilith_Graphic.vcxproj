@@ -160,9 +160,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\RenderBatch.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\GraphicManager.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\Monitor.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\Monitor\MonitorManager.h" />
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\View.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11device.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11deviceOption.h" />
     <ClInclude Include="..\..\..\Source\Graphic\Include\dx11\dx11shadermanager.h" />
@@ -175,9 +177,11 @@
     <ClInclude Include="..\..\..\Source\Graphic\Include\tools\ShaderCompiler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\RenderBatch.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\GraphicManager.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\Monitor.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\Monitor\MonitorManager.cpp" />
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\View.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11shadermanager.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11device.cpp" />
     <ClCompile Include="..\..\..\Source\Graphic\Source\dx11\dx11deviceOption.cpp" />

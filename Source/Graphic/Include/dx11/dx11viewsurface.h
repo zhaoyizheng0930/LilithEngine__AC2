@@ -18,6 +18,8 @@ namespace Lilith
 		void Display();
 
 		std::vector<View*>& GetViews();
+
+		DX11GraphicDevice* GetGraphicDevice();
 	protected:
 	private:
 		void PreRender();

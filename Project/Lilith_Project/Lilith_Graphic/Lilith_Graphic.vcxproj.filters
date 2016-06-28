@@ -84,6 +84,12 @@
     <ClInclude Include="..\..\..\Source\Graphic\Include\Common\GraphicManager.h">
       <Filter>Header Files\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\View.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\Graphic\Include\Common\RenderBatch.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Graphic\Source\PrecompiledHeaderGraphic.cpp">
@@ -123,6 +129,12 @@
       <Filter>Source Files\dx11</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Graphic\Source\Common\GraphicManager.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\View.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Graphic\Source\Common\RenderBatch.cpp">
       <Filter>Source Files\Common</Filter>
     </ClCompile>
   </ItemGroup>
