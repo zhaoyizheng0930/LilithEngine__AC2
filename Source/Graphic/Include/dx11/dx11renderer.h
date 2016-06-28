@@ -1,6 +1,7 @@
 #pragma once
 #include "dx11/dx11baserenderer.h"
 #include "dx11/dx11device.h"
+#include "Common/RenderBatch.h"
 
 namespace Lilith
 {
@@ -12,7 +13,7 @@ namespace Lilith
 
 		void SetHelpers(DX11GraphicDevice* pGraphicDevice);
 
-		void Render(/*RenderBatch& renderBatch, GfxBaseRendererRenderSets& baseRenderSets, GfxRenderSet& swapChainRenderSet*/);
+		void Render(RenderBatch* batch);
 	protected:
 
 		void PrepareData();

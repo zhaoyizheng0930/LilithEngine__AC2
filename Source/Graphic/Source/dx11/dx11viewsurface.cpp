@@ -32,6 +32,11 @@ namespace Lilith
 		PostRender();
 	}
 
+	std::vector<View*>& DX11ViewSurface::GetViews()
+	{
+		return m_Views;
+	}
+
 	void DX11ViewSurface::PreRender()
 	{
 

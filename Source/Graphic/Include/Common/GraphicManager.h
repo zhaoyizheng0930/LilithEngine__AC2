@@ -4,6 +4,7 @@
 
 namespace Lilith
 {
+	//Need MTR!!!
 	//manager many ViewSurface
 	class GraphicManager:public Singleton<GraphicManager>
 	{

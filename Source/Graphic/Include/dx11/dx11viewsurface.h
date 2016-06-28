@@ -2,6 +2,7 @@
 #include "dx11device.h"
 #include "dx11swapchain.h"
 #include "Rect.h"
+#include "Common/View.h"
 
 namespace Lilith
 {
@@ -15,6 +16,8 @@ namespace Lilith
 		void Initialize(DX11GraphicDevice* GraphicDevice, int width, int height);
 
 		void Display();
+
+		std::vector<View*>& GetViews();
 	protected:
 	private:
 		void PreRender();
@@ -28,5 +31,7 @@ namespace Lilith
 		
 		//PostEffects*		m_PostEffects;
 		DX11GraphicDevice*  m_GraphicDevice;
+
+		std::vector<View*>  m_Views;
 	};
 }

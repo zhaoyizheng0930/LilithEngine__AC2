@@ -20,7 +20,7 @@ namespace Lilith
 		m_GraphicDevice = pGraphicDevice;
 	}
 
-	void DX11Renderer::Render(/*RenderBatch& renderBatch, GfxBaseRendererRenderSets& baseRenderSets, GfxRenderSet& swapChainRenderSet*/)
+	void DX11Renderer::Render(RenderBatch* batch)
 	{
 		if (!PrepareRendering())
 		{
